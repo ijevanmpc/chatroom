@@ -10,10 +10,11 @@
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/button2"
         android:layout_marginBottom="34dp"
         android:ems="10" >
 
@@ -33,25 +34,29 @@
         android:layout_height="400dp"
         android:layout_above="@+id/editText1"
         android:layout_alignLeft="@+id/editText1"
+      	android:scrollY="20dp"
         android:layout_marginBottom="14dp" >
     </ListView>
-
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000">
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/imageView"
+		android:textSize="20dp"
+		android:textColor="#FFFFFF"
         android:text="TextView" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="fill_parent"
         android:layout_alignBottom="@+id/textView1"
-        android:layout_alignLeft="@+id/list"
         android:src="@drawable/art" />
-
+    </RelativeLayout>
 </RelativeLayout>

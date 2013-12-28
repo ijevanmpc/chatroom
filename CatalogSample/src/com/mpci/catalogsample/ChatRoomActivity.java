@@ -32,26 +32,37 @@ public class ChatRoomActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.chat);
 
-		//Getting data from MainListActivity
+		/**
+		 * Getting data from MainListActivity
+		 */
 		Intent intent = getIntent();
 		final String cells = intent.getStringExtra(EXT_TextToShow);
 		final int img = intent.getIntExtra(EXT_ImageToShow, 7);
 		
-		//Connecting with chat.xml views
+		/**
+		 * Connecting with chat.xml views
+		 */
 		mText = (TextView) findViewById(R.id.textView1);
 		mText.setText(cells);
 		
 		mImg = (ImageView)findViewById(R.id.imageView);
 		mImg.setImageResource(img);
 		
-		//Creating listview widget where we put messages
+		/**
+		 * Creating listview widget where we put messages
+		 */
 		ListView listView = (ListView) findViewById(R.id.list);
+		listView.setSelectionAfterHeaderView();
 		editText = (EditText) findViewById(R.id.editText1);
 
-		//Creating message array
+		/**
+		 * Creating message array
+		 */
 		final ArrayList<String> masseges = new ArrayList<String>();
 
-		//Creating adapter for listview
+		/**
+		 * Creating adapter for listview
+		 */
 		final ArrayAdapter<String> adapter;
 		adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, masseges);
@@ -60,7 +71,9 @@ public class ChatRoomActivity extends Activity {
 
 		mSend = (Button) findViewById(R.id.button2);
 
-		//Listener for Send button which add messages to array
+		/**
+		 * Listener for Send button which add messages to array
+		 */
 		mSend.setOnClickListener(new OnClickListener() {
 
 			@Override
